@@ -192,9 +192,15 @@ print("\nOutlier detection completed!")
 
 <img width="434" height="517" alt="Screenshot 2026-11-03 151245" src="https://github.com/user-attachments/assets/43cf059c-e463-40f2-8e4d-eee0389c4615" />
 
+
+
 <img width="345" height="517" alt="Screenshot 2026-11-03 151303" src="https://github.com/user-attachments/assets/bd539f9a-ad30-4c14-af72-8059e2236037" />
 
+
+
 <img width="374" height="421" alt="Screenshot 2026-11-03 151327" src="https://github.com/user-attachments/assets/50763b23-3c33-4b69-894d-920439332bd1" />
+
+
 
 <img width="327" height="484" alt="Screenshot 2026-11-03 151338" src="https://github.com/user-attachments/assets/ce99dcee-573f-4287-8498-364b4adaa613" />
 
@@ -230,9 +236,15 @@ print("\nOutlier detection completed!")
 ```
 <img width="320" height="513" alt="Screenshot 2026-11-03 151534" src="https://github.com/user-attachments/assets/55f23101-48d3-4f5b-adf7-a49f3e144560" />
 
+
+
 <img width="243" height="506" alt="Screenshot 2026-11-03 151552" src="https://github.com/user-attachments/assets/6cd372be-55e2-4c4b-9068-0a6a19a0582a" />
 
+
+
 <img width="240" height="520" alt="Screenshot 2026-11-03 151603" src="https://github.com/user-attachments/assets/c8bcbe6e-e284-412d-8b26-c457bc35648e" />
+
+
 
 <img width="243" height="520" alt="Screenshot 2026-11-03 151611" src="https://github.com/user-attachments/assets/452bd371-a370-4363-8e73-815868d89ea2" />
 
