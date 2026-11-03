@@ -121,5 +121,116 @@ print("\nDuplicate rows:", df.duplicated().sum())
 
 <img width="1366" height="768" alt="Screenshot 2026-11-02 151542" src="https://github.com/user-attachments/assets/65346fc1-52ac-4efa-8f09-3fe02123b000" />
 
+```
+import pandas as pd
+
+
+df = pd.read_csv("Loan_data.csv")
+
+
+print("Missing values before cleaning:")
+print(df.isnull().sum())
+
+
+for col in df.select_dtypes(include="number").columns:
+    df[col] = df[col].fillna(df[col].median())
+
+
+for col in df.select_dtypes(include="object").columns:
+    if df[col].isnull().sum() > 0:
+        df[col] = df[col].fillna(df[col].mode()[0])
+
+
+print("\nMissing values after cleaning:")
+print(df.isnull().sum())
+
+
+print("\nCleaned Dataset:")
+print(df.head())
+
+df.to_csv("Cleaned_data.csv", index=False)
+
+```
+
+<img width="507" height="462" alt="Screenshot 2026-11-03 150705" src="https://github.com/user-attachments/assets/6d1938b3-9e7c-4cb3-a60f-2b06199e747b" />
+
+
+```
+import pandas as pd
+
+df = pd.read_csv("Loan_data.csv")
+
+print("Original Dataset:")
+print(df.head())
+
+
+num_cols = df.select_dtypes(include="number").columns
+
+print("\nUnusual Measurements (Outliers):")
+
+for col in num_cols:
+    Q1 = df[col].quantile(0.25)
+    Q3 = df[col].quantile(0.75)
+
+    IQR = Q3 - Q1
+
+    lower = Q1 - 1.5 * IQR
+    upper = Q3 + 1.5 * IQR
+
+    outliers = df[(df[col] < lower) | (df[col] > upper)]
+
+    print("\nColumn:", col)
+    print("Lower limit:", lower)
+    print("Upper limit:", upper)
+    print("Number of outliers:", len(outliers))
+
+    if not outliers.empty:
+        print(outliers[[col]])
+
+print("\nOutlier detection completed!")
+```
+
+<img width="434" height="517" alt="Screenshot 2026-11-03 151245" src="https://github.com/user-attachments/assets/43cf059c-e463-40f2-8e4d-eee0389c4615" />
+
+<img width="345" height="517" alt="Screenshot 2026-11-03 151303" src="https://github.com/user-attachments/assets/bd539f9a-ad30-4c14-af72-8059e2236037" />
+
+<img width="374" height="421" alt="Screenshot 2026-11-03 151327" src="https://github.com/user-attachments/assets/50763b23-3c33-4b69-894d-920439332bd1" />
+
+<img width="327" height="484" alt="Screenshot 2026-11-03 151338" src="https://github.com/user-attachments/assets/ce99dcee-573f-4287-8498-364b4adaa613" />
+
+```
+import pandas as pd
+from scipy.stats import zscore
+
+df = pd.read_csv("Loan_data.csv")
+
+num_cols = df.select_dtypes(include="number").columns
+
+for col in num_cols:
+    print("\nColumn:", col)
+
+    Q1 = df[col].quantile(0.25)
+    Q3 = df[col].quantile(0.75)
+    IQR = Q3 - Q1
+
+    lower = Q1 - 1.5 * IQR
+    upper = Q3 + 1.5 * IQR
+
+    iqr_outliers = df[(df[col] < lower) | (df[col] > upper)]
+    print("IQR outliers:", len(iqr_outliers))
+    print(iqr_outliers[[col]])
+
+    z = zscore(df[col], nan_policy="omit")
+    z_outliers = df[abs(z) > 3]
+
+    print("Z-score outliers:", len(z_outliers))
+    print(z_outliers[[col]])
+
+print("\nOutlier detection completed!")
+```
+<img width="320" height="513" alt="Screenshot 2026-11-03 151534" src="https://github.com/user-attachments/assets/55f23101-48d3-4f5b-adf7-a49f3e144560" />
+
+
+
 # Result
           <<include your Result here>>
