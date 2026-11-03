@@ -230,6 +230,36 @@ print("\nOutlier detection completed!")
 ```
 <img width="320" height="513" alt="Screenshot 2026-11-03 151534" src="https://github.com/user-attachments/assets/55f23101-48d3-4f5b-adf7-a49f3e144560" />
 
+<img width="243" height="506" alt="Screenshot 2026-11-03 151552" src="https://github.com/user-attachments/assets/6cd372be-55e2-4c4b-9068-0a6a19a0582a" />
+
+<img width="240" height="520" alt="Screenshot 2026-11-03 151603" src="https://github.com/user-attachments/assets/c8bcbe6e-e284-412d-8b26-c457bc35648e" />
+
+<img width="243" height="520" alt="Screenshot 2026-11-03 151611" src="https://github.com/user-attachments/assets/452bd371-a370-4363-8e73-815868d89ea2" />
+
+#SAMPLEIDS.CSV
+```
+import pandas as pd
+
+df = pd.read_csv("SAMPLEIDS.csv")
+
+df = df.drop_duplicates()
+
+print("Missing values:")
+print(df.isnull().sum())
+
+print("Duplicate registration numbers:")
+print(df[df.duplicated("REGNO", keep=False)])
+
+marks = ["M1", "M2", "M3", "M4"]
+
+print("Inconsistent total marks:")
+print(df[df["TOTAL"] != df[marks].sum(axis=1, min_count=4)])
+
+df.to_csv("SAMPLEIDS_cleaned.csv", index=False)
+
+print("Cleaning completed!")
+```
+<img width="379" height="338" alt="Screenshot 2026-11-03 153558" src="https://github.com/user-attachments/assets/0d8434b4-233b-4a97-9f6e-5d5f33f04b0b" />
 
 
 # Result
