@@ -194,11 +194,6 @@ print("\nOutlier detection completed!")
 
 
 
-<img width="345" height="517" alt="Screenshot 2026-11-03 151303" src="https://github.com/user-attachments/assets/bd539f9a-ad30-4c14-af72-8059e2236037" />
-
-
-
-<img width="374" height="421" alt="Screenshot 2026-11-03 151327" src="https://github.com/user-attachments/assets/50763b23-3c33-4b69-894d-920439332bd1" />
 
 
 
@@ -238,11 +233,6 @@ print("\nOutlier detection completed!")
 
 
 
-<img width="243" height="506" alt="Screenshot 2026-11-03 151552" src="https://github.com/user-attachments/assets/6cd372be-55e2-4c4b-9068-0a6a19a0582a" />
-
-
-
-<img width="240" height="520" alt="Screenshot 2026-11-03 151603" src="https://github.com/user-attachments/assets/c8bcbe6e-e284-412d-8b26-c457bc35648e" />
 
 
 
